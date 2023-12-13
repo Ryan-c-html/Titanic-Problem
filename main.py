@@ -26,10 +26,16 @@ print(train['Pclass'].value_counts())
 # Limpando o dataFrame
 df1=train.drop(['Name','Ticket','Cabin'], axis=1)
 
+# Printando pós limpeza
+print(df1.head())
+
 # Convertendo strings para valores númericos
 df1['Sex']=df1['Sex'].map({'female':0, 'male':1})
 df1['Embarked']=df1['Embarked'].map({'S':0, 'C':1, 'Q':2,'nan':'NaN'})
-#df1['Title']=df1['Title'].map({'Mr':0, 'Miss':1, 'Mrs':2,'Master':3,'Officer':4,'Royalty':5})
 
-# Printando pós limpeza
-print(df1)
+# Printando pós redefinição
+print(df1.head())
+
+# Variaveis para armazenar a idade média de cada sexo
+idadeMediaHomen = df1[df1['Sex']==1]['Age'].median()
+idadeMediaMulher = df1[df1['Sex']==0]['Age'].median()
