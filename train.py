@@ -54,6 +54,9 @@ df1['Sex'] = df1['Sex'].map({'female':0, 'male':1})
 df1['Embarked'] = df1['Embarked'].map({'S':0, 'C':1, 'Q':2,'nan':'NaN'})
 df1['Title'] = df1['Title'].map({'Mr':0, 'Miss':1, 'Mrs':2,'Master':3,'Officer':4,'Royalty':5})
 
+# Printando pós redefinição
+print(df1.head())
+
 # Após verificar os nulos. Foi apresentado que tinham muitas idades nulas. Para isso foi feita a média das idades para cada sexo e fo colocado nesses valores nulos
 # Variaveis para armazenar a idade média de cada sexo
 idadeMediaHomem1 = df1[df1['Sex']==1]['Age'].median()
